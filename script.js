@@ -4,7 +4,7 @@ const getRandomInt = () => {
 }
 
 // function to get the computer's choice
-const getComputerChoice = (computerChoice) => {
+const getComputerChoice = () => {
    let computerChoice = getRandomInt();
      if(computerChoice == 0) {
          console.log("Rock");
@@ -61,7 +61,7 @@ const getHumanChoice = () => {
             const humanSelection = getHumanChoice();
          playRound(computerSelection, humanSelection);
          }
-                                                      
+                                                   
       // conditional statement to declare the result of the game
       if(humanScore > computerScore) {
          console.log(`You win! Total score:
