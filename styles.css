@@ -1,0 +1,58 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Megamax Jonathan Too', sans-serif;
+    color: #fff;
+}
+
+body {
+    height: 100vh;
+    background: #10142a;
+    padding: 0;
+}
+
+header,
+footer,
+body,
+main,
+button,
+.scores {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header {
+    background: #090b19;
+    width: 100%;
+    padding: 40px;
+}
+
+main {
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+}
+
+button {
+    background: #333a56;
+    border-radius: 10%;
+    max-width: 150px;
+    padding: 30px;
+    gap: 50px;
+    font-size: 80px;
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+}
+
+.scores {
+    flex-direction: row;
+    width: 25%;
+    justify-content: space-between;
+}

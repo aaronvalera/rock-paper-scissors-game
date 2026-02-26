@@ -19,14 +19,14 @@ const getComputerChoice = () => {
 }
 
 const rockBtn = document.querySelector("#rock");
-const paperBtn = document.querySelector("#paper");
-const scissorsBtn = document.querySelector("#scissors");
 rockBtn.addEventListener("click", () => {
    playRound("Rock");
 });
+const paperBtn = document.querySelector("#paper");
 paperBtn.addEventListener("click", () => {
    playRound("Paper");
 });
+const scissorsBtn = document.querySelector("#scissors");
 scissorsBtn.addEventListener("click", () => {
    playRound("Scissors");
 });
@@ -44,34 +44,40 @@ const getHumanChoice = () => {
          return "Scissors";
     }
    }
-   // function to structure the entire game
+
 let humanScore = 0;
 let computerScore = 0;
 let playedRounds = 0;
 const roundResult= document.querySelector("#roundResult");
 const finalResult = document.querySelector("#finalResult");
+const playerCounter = document.querySelector(".playerScore");
+const computerCounter = document.querySelector(".computerScore");
 
 // function to structure a round of the game
 const playRound = (humanChoice) => {
    if(playedRounds >= 5) {
       return;
    }
+
+   playerCounter.innerHTML = `<p>Player: ${humanScore}</p>`;
+   computerCounter.innerHTML = `<p>Computer: ${computerScore}</p>`;
    
    const computerChoice = getComputerChoice();
    if(computerChoice === humanChoice) {
-      roundResult.textContent = "It's a tie!";
+      roundResult.innerHTML = "<h2>It's a tie!</h2>";
    } else if(
       (computerChoice === "Rock" && humanChoice === "Scissors") ||
          (computerChoice === "Paper" && humanChoice === "Rock") ||
          (computerChoice === "Scissors" && humanChoice == "Paper")
       ) {
-         roundResult.textContent = `You lost! ${computerChoice} beats ${humanChoice}!`;
-         computerScore++
+         roundResult.innerHTML = `<h2>You lost!</h2>
+         <p>${computerChoice} beats ${humanChoice}!</p>`;
+         computerScore++;
       } else {
-         roundResult.textContent = `You win! ${humanChoice} beats ${computerChoice}!`;
-         humanScore++
+         roundResult.innerHTML = `<h2>You win!</h2>
+         <p>${humanChoice} beats ${computerChoice}!</p>`;
+         humanScore++;
       }
-   console.log(`Computer score: ${computerScore}, Human Score: ${humanScore}`);
 
    playedRounds++;
 
