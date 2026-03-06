@@ -17,23 +17,23 @@ footer,
 body,
 main,
 button,
-.scores {
+.scores,
+.choices {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
 }
 
 header {
     background: #090b19;
-    width: 100%;
-    padding: 40px;
+    padding: 20px;
 }
 
 main {
     text-align: center;
     gap: 20px;
-    width: 100%;
 }
 
 button {
@@ -41,18 +41,42 @@ button {
     border-radius: 10%;
     max-width: 150px;
     padding: 30px;
-    gap: 50px;
-    font-size: 80px;
+    font-size: 30px;
 }
 
 .btns {
     display: flex;
-    flex-wrap: wrap;
     gap: 50px;
 }
 
+.choices {
+    font-size: 100px;
+}
+
+.scores {
+    font-size: 20px;
+    padding: 30px 0;
+}
+
+.choices,
 .scores {
     flex-direction: row;
-    width: 25%;
-    justify-content: space-between;
+    gap: 60px;
+    padding: 30px 0;
+}
+
+.victory h2, 
+.victory p,
+.playerScore p {
+    color: #2ecc71 !important;
+}
+
+.defeat h2,
+.defeat p,
+.computerScore p {
+    color: #e74c3c !important;
+}
+
+.tie h2 {
+    color: #f1c40f;
 }
