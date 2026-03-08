@@ -17,8 +17,12 @@ footer,
 body,
 main,
 button,
+span a,
 .scores,
-.choices {
+.choices,
+.result-card,
+#roundResult,
+#modal {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,12 +40,28 @@ main {
     gap: 20px;
 }
 
+span img {
+    width: 50px;
+    height: 50px;
+}
+
+span a {
+    flex-direction: row;
+}
+
+#roundResult {
+    font-size: 24px;
+    min-height: 120px;
+    justify-content: center;
+}
+
 button {
     background: #333a56;
     border-radius: 10%;
     max-width: 150px;
     padding: 30px;
     font-size: 30px;
+    box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
 }
 
 .btns {
@@ -61,22 +81,66 @@ button {
 .choices,
 .scores {
     flex-direction: row;
+    justify-content: space-evenly;
     gap: 60px;
     padding: 30px 0;
+}
+
+.choices div {
+    width: 150px;
+    text-align: center;
+    display: inline-block;
 }
 
 .victory h2, 
 .victory p,
 .playerScore p {
-    color: #2ecc71 !important;
+    color: #2ecc71;
 }
 
 .defeat h2,
 .defeat p,
 .computerScore p {
-    color: #e74c3c !important;
+    color: #e74c3c;
 }
 
-.tie h2 {
+.tie h2,
+.tie p {
     color: #f1c40f;
+}
+
+#modal {
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    transition: opacity 0.9s ease;
+}
+
+.result-card {
+    background: #1B1F34;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px double #3E4A70;
+    box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
+    max-width: 400px;
+    width: 100%;
+    gap: 20px;
+    font-weight: 600;
+}
+
+#modal-title {
+    font-size: 32px;
+}
+
+#modal-final-score {
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important;
 }

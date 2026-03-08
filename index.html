@@ -14,7 +14,8 @@
     </header>
     <main>
         <section>
-            <div id="roundResult"></div>
+            <div id="roundResult">Choose your Weapon!<br>
+            First to score 5 points wins the game!</div>
             <div class="choices">
                 <div class="player-choice">❓</div>
                 <div class="computer-choice">❓</div>
@@ -32,9 +33,16 @@
         <div id="finalResult"></div>
     </main>
     <footer>
-        <h2>Desarrollado por:</h2>
-        <span><a href="https://github.com/aaronvalera" target="_blank">Aaron Valera 🤖</a></span>
+        <h2>Developed by:</h2>
+        <span><a href="https://github.com/aaronvalera" target="_blank"><img src="./media/github-icon.png" alt="github-logo">Aaron Valera 🤖</a></span>
     </footer>
+    <div id="modal" class="hidden">
+        <div class="result-card">
+            <h2 id="modal-title"></h2>
+            <p id="modal-final-score"></p>
+            <button id="reset-btn">RETRY 🎮</button>
+        </div>
+    </div>
     <script src="./script.js"></script>
 </body>
 </html>
