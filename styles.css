@@ -159,4 +159,8 @@ button {
     .result-card {
         padding: 20px;
     }
+
+    .scores {
+        gap: 50px;
+    }
 }
