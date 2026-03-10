@@ -48,6 +48,7 @@ span img {
 
 span a {
     flex-direction: row;
+    text-decoration: none;
 }
 
 #roundResult {
