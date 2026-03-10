@@ -33,6 +33,7 @@ span a,
 header {
     background: #090b19;
     padding: 20px;
+    text-align: center;
 }
 
 main {
@@ -127,7 +128,7 @@ button {
     text-align: center;
     border: 2px double #3E4A70;
     box-shadow: 0 0 30px rgba(0, 212, 255, 0.5);
-    max-width: 400px;
+    max-width: 300px;
     width: 100%;
     gap: 20px;
     font-weight: 600;
@@ -143,4 +144,18 @@ button {
 
 .hidden {
     display: none !important;
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 20px;
+    }
+
+    #roundResult {
+        font-size: 20px;
+    }
+
+    .result-card {
+        padding: 20px;
+    }
 }
