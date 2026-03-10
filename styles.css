@@ -10,6 +10,7 @@ body {
     height: 100vh;
     background: #10142a;
     padding: 0;
+    gap: 40px;
 }
 
 header,
@@ -148,6 +149,10 @@ button {
 }
 
 @media (max-width: 480px) {
+    body {
+        gap: 0;
+    }
+
     button {
         padding: 20px;
     }
@@ -156,11 +161,70 @@ button {
         font-size: 20px;
     }
 
+    .scores {
+        gap: 50px;
+    }
+
     .result-card {
-        padding: 20px;
+        padding: 30px;
+        max-width: 340px;
+    }
+
+    #modal-final-score {
+        text-wrap: nowrap;
+        font-size: 14px;
+        font-weight: 900;
+    }
+
+    #modal-title {
+        font-size: 28px;
+    }
+}
+
+@media (min-width: 768px) {
+    header {
+        font-size: 26px;
+    }
+
+    footer {
+      font-size: 22px;  
+    }
+
+    #roundResult {
+        font-size: 30px;
     }
 
     .scores {
-        gap: 50px;
+        font-size: 28px;
+    }
+    
+    .btns {
+        gap: 80px;
+    }
+
+    button {
+        padding: 40px;
+        font-size: 40px;
+    }
+
+    .choices {
+        font-size: 130px;
+    }
+
+    .result-card {
+        max-width: 660px;
+        gap: 35px;
+    }
+
+    .result-card button {
+        max-width: 200px;
+    }
+    
+    #modal-title {
+        font-size: 42px;
+    }
+
+    #modal-final-score {
+        font-size: 26px;
     }
 }
