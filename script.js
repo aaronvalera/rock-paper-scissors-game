@@ -1,27 +1,7 @@
-// Variables
-let humanScore = 0;
-let computerScore = 0;
-
-// Button selectors
+// Selectors
 const rockBtn = document.querySelector("#rock");
-rockBtn.addEventListener("click", () => {
-   playRound("Rock");
-   humanChoiceHolder.textContent = "💎";
-});
-
 const paperBtn = document.querySelector("#paper");
-paperBtn.addEventListener("click", () => {
-   playRound("Paper");
-   humanChoiceHolder.textContent = "📄";
-});
-
 const scissorsBtn = document.querySelector("#scissors");
-scissorsBtn.addEventListener("click", () => {
-   playRound("Scissors");
-   humanChoiceHolder.textContent = "✂️";
-});
-
-// Text selectors
 const humanChoiceHolder = document.querySelector(".player-choice");
 const computerChoiceHolder = document.querySelector(".computer-choice")
 const roundResult = document.querySelector("#roundResult");
@@ -33,6 +13,27 @@ const modalInfo = document.querySelector(".result-card")
 const modalTitle = document.querySelector("#modal-title");
 const modalFinalScore = document.querySelector("#modal-final-score");
 const resetBtn = document.querySelector("#reset-btn");
+
+// Variables
+let humanScore = 0;
+let computerScore = 0;
+
+// Get human's choice
+rockBtn.addEventListener("click", () => {
+   playRound("Rock");
+   humanChoiceHolder.textContent = "💎";
+});
+
+paperBtn.addEventListener("click", () => {
+   playRound("Paper");
+   humanChoiceHolder.textContent = "📄";
+});
+
+scissorsBtn.addEventListener("click", () => {
+   playRound("Scissors");
+   humanChoiceHolder.textContent = "✂️";
+});
+
 
 // Function to get a random rounded integer
 const getRandomInt = () => {
@@ -73,16 +74,12 @@ resetBtn.addEventListener("click", restartGame);
 // Function to declare the result of the game
 const declareWinner = () => {
    modal.classList.remove("hidden");
-   modalFinalScore.textContent = `Score: Player: ${humanScore} - Computer: ${computerScore}`;
-    
+   
    if(humanScore > computerScore) {
       modalTitle.textContent = "YOU WON!🏆";
       modalTitle.style.color = "#2ecc71";
       modalInfo.style.boxShadow = "0 0 30px #2ecc71"
-   } else if(humanScore === computerScore) {
-      modalTitle.textContent = "IT'S A TIE!🤝";
-      modalTitle.style.color = "#f1c40f";
-      modalInfo.style.boxShadow = "0 0 30px #f1c40f"
+      modalFinalScore.textContent = `Score: Player: ${humanScore} - Computer: ${computerScore}`;
    } else {
       modalTitle.textContent = "YOU LOST!💀";
       modalTitle.style.color = "#e74c3c";
@@ -92,7 +89,6 @@ const declareWinner = () => {
 
 // Function to structure a round of the game
 const playRound = (humanChoice) => {
-   if(humanScore === 5 || computerScore === 5) return;
    roundResult.classList.remove("victory", "defeat", "tie");
    const computerChoice = getComputerChoice();
 
