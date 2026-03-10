@@ -29,9 +29,9 @@ The rules are straightforward:
 
 ## 🛠️ Technologies Used
 This project was built using standard web technologies:
-* 🟨 **JavaScript (54.6%):** Handles the game logic, random choice generation for the computer, and updates the user interface based on the results.
-* 🟧 **HTML (24.8%):** Provides the basic structure and layout of the webpage.
-* 🟦 **CSS (20.6%):** Styles the elements to make the game visually appealing.
+* 🟨 **JavaScript (47.0%):** Handles the game logic, random choice generation for the computer, and updates the user interface based on the results.
+* 🟧 **HTML (18.5%):** Provides the basic structure and layout of the webpage.
+* 🟦 **CSS (34.5%):** Styles the elements to make the game visually appealing.
 
 ## 🌐 Live Demo
 You can play the game live right now! Check it out here:  
