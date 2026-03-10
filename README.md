@@ -1,4 +1,4 @@
-# 🪨📄✂️ Rock Paper Scissors Game
+# 💎📄✂️ Rock Paper Scissors Game
 
 A webpage where you can play the worldwide known rock-paper-scissors game! 🎮
 
@@ -17,9 +17,9 @@ This project is a simple, interactive web-based implementation of the classic ha
 Rock-Paper-Scissors is a simple hand game usually played against an opponent. In this web version, you are playing against the computer.
 
 The rules are straightforward:
-* 🪨 **Rock** crushes **Scissors** ✂️ (Rock wins)
+* 💎 **Rock** crushes **Scissors** ✂️ (Rock wins)
 * ✂️ **Scissors** cuts **Paper** 📄 (Scissors wins)
-* 📄 **Paper** covers **Rock** 🪨 (Paper wins)
+* 📄 **Paper** covers **Rock** 💎 (Paper wins)
 
 **To play:**
 1. Click on the button/icon corresponding to your choice (Rock, Paper, or Scissors).
