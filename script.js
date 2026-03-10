@@ -84,14 +84,17 @@ const declareWinner = () => {
       modalTitle.textContent = "YOU LOST!💀";
       modalTitle.style.color = "#e74c3c";
       modalInfo.style.boxShadow = "0 0 30px #e74c3c"
+       modalFinalScore.textContent = `Score: Player: ${humanScore} - Computer: ${computerScore}`;
    }
 }
 
 // Function to structure a round of the game
 const playRound = (humanChoice) => {
+   if(humanScore === 5 || computerScore === 5) return;
+   
    roundResult.classList.remove("victory", "defeat", "tie");
    const computerChoice = getComputerChoice();
-
+   
    if(computerChoice === humanChoice) {
       roundResult.innerHTML = `<h2>It's a tie!</h2>
       <p>${humanChoice} ties with ${computerChoice}.</p>`;
@@ -111,11 +114,13 @@ const playRound = (humanChoice) => {
       roundResult.classList.add("victory");
       humanScore++;
    }
-
+   
    humanCounter.innerHTML = `<p>Player: ${humanScore}</p>`;
    computerCounter.innerHTML = `<p>Computer: ${computerScore}</p>`;
 
    if(humanScore === 5 || computerScore === 5) {
-      declareWinner();
+      setTimeout(() => {
+         declareWinner();
+      }, 1000);
    }
 }
