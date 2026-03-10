@@ -54,41 +54,41 @@ const getComputerChoice = () => {
     }
 }  
    
-   // Function to restart the game
-   const restartGame = () => {
-      humanScore = 0;
-      computerScore = 0;
+// Function to restart the game
+const restartGame = () => {
+   humanScore = 0;
+   computerScore = 0;
       
-      roundResult.innerHTML = `Choose your Weapon! <br> First to score 5 points wins the game!`;
-      humanChoiceHolder.textContent = "❓";
-      computerChoiceHolder.textContent = "❓";
-      humanCounter.textContent = `Player: ${humanScore}`;
-      computerCounter.textContent = `Computer: ${computerScore}`;
+   roundResult.innerHTML = `Choose your Weapon! <br> First to score 5 points wins the game!`;
+   humanChoiceHolder.textContent = "❓";
+   computerChoiceHolder.textContent = "❓";
+   humanCounter.textContent = `Player: ${humanScore}`;
+   computerCounter.textContent = `Computer: ${computerScore}`;
    
-      modal.classList.add("hidden");
-   }
+   modal.classList.add("hidden");
+}
    
-   resetBtn.addEventListener("click", restartGame);
+resetBtn.addEventListener("click", restartGame);
    
-   // Function to declare the result of the game
-   const declareWinner = () => {
-      modal.classList.remove("hidden");
-      modalFinalScore.textContent = `Score: Player: ${humanScore} - Computer: ${computerScore}`;
+// Function to declare the result of the game
+const declareWinner = () => {
+   modal.classList.remove("hidden");
+   modalFinalScore.textContent = `Score: Player: ${humanScore} - Computer: ${computerScore}`;
     
-      if(humanScore > computerScore) {
-         modalTitle.textContent = "YOU WON!🏆";
-         modalTitle.style.color = "#2ecc71";
-         modalInfo.style.boxShadow = "0 0 30px #2ecc71"
-      } else if(humanScore === computerScore) {
-         modalTitle.textContent = "IT'S A TIE!🤝";
-         modalTitle.style.color = "#f1c40f";
-         modalInfo.style.boxShadow = "0 0 30px #f1c40f"
-      } else {
-         modalTitle.textContent = "YOU LOST!💀";
-         modalTitle.style.color = "#e74c3c";
-         modalInfo.style.boxShadow = "0 0 30px #e74c3c"
-      }
+   if(humanScore > computerScore) {
+      modalTitle.textContent = "YOU WON!🏆";
+      modalTitle.style.color = "#2ecc71";
+      modalInfo.style.boxShadow = "0 0 30px #2ecc71"
+   } else if(humanScore === computerScore) {
+      modalTitle.textContent = "IT'S A TIE!🤝";
+      modalTitle.style.color = "#f1c40f";
+      modalInfo.style.boxShadow = "0 0 30px #f1c40f"
+   } else {
+      modalTitle.textContent = "YOU LOST!💀";
+      modalTitle.style.color = "#e74c3c";
+      modalInfo.style.boxShadow = "0 0 30px #e74c3c"
    }
+}
 
 // Function to structure a round of the game
 const playRound = (humanChoice) => {
@@ -105,19 +105,19 @@ const playRound = (humanChoice) => {
       (computerChoice === "Paper" && humanChoice === "Rock") ||
       (computerChoice === "Scissors" && humanChoice == "Paper")
    ) {
-         roundResult.innerHTML = `<h2>You lost!</h2>
-         <p>${computerChoice} beats ${humanChoice}!</p>`;
-         roundResult.classList.add("defeat");
-         computerScore++;
-      } else {
-         roundResult.innerHTML = `<h2>You win!</h2>
-         <p>${humanChoice} beats ${computerChoice}!</p>`;
-         roundResult.classList.add("victory");
-         humanScore++;
-      }
+      roundResult.innerHTML = `<h2>You lost!</h2>
+      <p>${computerChoice} beats ${humanChoice}!</p>`;
+      roundResult.classList.add("defeat");
+      computerScore++;
+   } else {
+      roundResult.innerHTML = `<h2>You win!</h2>
+      <p>${humanChoice} beats ${computerChoice}!</p>`;
+      roundResult.classList.add("victory");
+      humanScore++;
+   }
 
-      humanCounter.innerHTML = `<p>Player: ${humanScore}</p>`;
-      computerCounter.innerHTML = `<p>Computer: ${computerScore}</p>`;
+   humanCounter.innerHTML = `<p>Player: ${humanScore}</p>`;
+   computerCounter.innerHTML = `<p>Computer: ${computerScore}</p>`;
 
    if(humanScore === 5 || computerScore === 5) {
       declareWinner();
